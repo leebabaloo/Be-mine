@@ -146,7 +146,7 @@ function startMiniGame() {
 
 }
 function endMiniGame(score) {
-    clearInterval(heartInterval);
+    
     const container = document.getElementById('image-container');
     container.innerHTML = ''; // Clear mini-game
 
