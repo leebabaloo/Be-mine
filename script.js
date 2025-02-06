@@ -72,6 +72,13 @@ function displayYay() {
         // Hide the options container
         document.getElementById('options').style.display = 'none';
     };
+    setTimeout(function() {
+        clearInterval(interval);
+        document.body.style.backgroundColor = ''; // Reset background color
+        if (callback) {
+            callback();
+        }
+    }, 6000);
 }
 
 // Display the pop initially
