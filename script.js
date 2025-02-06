@@ -1,7 +1,7 @@
 // Function to handle button click events
 function selectOption(option) {
     // Check which option was clicked
-    if (option === 'YESSSSSS <33333') {
+    if (option === 'YESSSSSS<33333') {
         // Flash rainbow colors
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
@@ -38,19 +38,19 @@ function flashRainbowColors(callback) {
     }, 2000); // Flash colors for 2 seconds
 }
 
-// Function to display the cat.gif initially
+// Function to display the pop.image initially
 function displayCat() {
     // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
     // Create a new Image element for the cat
-    var catImage = new Image();
+    var popImage = new Image();
     // Set the source (file path) for the cat image
-    catImage.src = 'pop'; 
+    popImage.src = 'pop'; 
     // Set alternative text for the image (for accessibility)
-    catImage.alt = 'Question';
+    popImage.alt = 'Question';
     // When the cat image is fully loaded, add it to the image container
-    catImage.onload = function() {
-        imageContainer.appendChild(catImage);
+    popImage.onload = function() {
+        imageContainer.appendChild(popImage);
     };
 }
 
