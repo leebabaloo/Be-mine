@@ -1,3 +1,4 @@
+
 // Function to handle click outcomes
 function selectOption(option) {
     // Check which option was clicked
@@ -12,7 +13,7 @@ function selectOption(option) {
         document.getElementById('no-button').innerText = 'Nahuh!'; 
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
-        var currentFontSize= window.getComputedStyle(yesButton).getPropertyvalue('font-size');
+        var currentFontSize= window.getComputedStyle(yesButton).getPropertyValue('font-size');
         var newSize = parseFloat(currentFontSize)*2;
         yesButton.style.fontSize = newSize + 'px';
     } else {
@@ -23,6 +24,7 @@ function selectOption(option) {
 
 // Function to flash rainbow colors 
 function flashRainbowColors(callback) {
+    var originalColor = document.body.style.backgroundColor;
     var colors = ['#f8ddd6', '#e89bba', '#bff0d6', '#dadef5', '#cdf1f0', '#bae89b'];
     var i = 0;
     var interval = setInterval(function() {
@@ -31,7 +33,7 @@ function flashRainbowColors(callback) {
     }, 400); // Change color every 400 milliseconds
     setTimeout(function() {
         clearInterval(interval);
-        document.body.style.backgroundColor = ''; // Reset background color
+        document.body.style.backgroundColor = originalColor; // Reset background color
         if (callback) {
             callback();
         }
@@ -63,12 +65,13 @@ function displayYay() {
     
     var yayVideo = document.createElement('video');
     
-    yayVideo.src = 'yay.mp4'; 
-    
-    yayVideo.autoplay= true;
-    yayVideo.loop= true;
-    yayVideo.muted= true;
+    yayVideo.src = 'yay.mp4';
+    yayVideo.autoplay = true;
+    yayVideo.loop = true;
+    yayVideo.muted = true;
     yayVideo.playsInline = true;
+    yayVideo.load();
+    
 
      imageContainer.appendChild(yayVideo);
         // Hide the options container
@@ -77,5 +80,6 @@ function displayYay() {
     
 }
 
-// Display the pop initially
-displayPop();
+document.addEventListener('DOMContentLoaded', function() {
+    displayPop();
+});
