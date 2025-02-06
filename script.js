@@ -5,10 +5,10 @@ function selectOption(option) {
         // Flash rainbow colors
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
-            displayYay(); // Display the cat-heart.gif
+            displayYay(); // Display the yay gif
         });
     } else if (option === 'NAURRRRRR:(((') {
-        // Change text on the "No" button to "You sure?"
+        // Change text on the "No" button to "Nahuh!"
         document.getElementById('no-button').innerText = 'Nahuh!'; 
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
@@ -42,9 +42,9 @@ function flashRainbowColors(callback) {
 function displayPop() {
     // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the cat
+    // Create a new Image element for the img
     var popImage = new Image();
-    // Set the source (file path) for the cat image
+    // Set the source (file path) for the  image
     popImage.src = 'pop.png'; 
     // Set alternative text for the image (for accessibility)
     popImage.alt = 'Pop';
@@ -54,15 +54,15 @@ function displayPop() {
     };
 }
 
-// Function to display the cat-heart.gif
+// Function to display the yay gif
 function displayYay() {
     // Clear existing content in the image container
     document.getElementById('image-container').innerHTML = '';
     // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the cat-heart
+    // Create a new Image element for the image
     var yayImage = new Image();
-    // Set the source (file path) for the cat-heart image
+    // Set the source (file path) for the  image
     yayImage.src = 'yay.mp4'; 
     // Set alternative text for the image (for accessibility)
     yayImage.alt = 'Yippee';
