@@ -1,18 +1,6 @@
-<html>
 
-<head>
-    <title>Background Change</title>
-</head>
-
-<body bgcolor="#ffe4e9">
-    <h1>
-        Hello reader my name is sachin
-        Welcome to GeekforGeeks
-    </h1>
-</body>
-
-</html>
 #container {
+    style:"background-color: #ffe4e9;"
     display: flex; /* Use flexbox layout */
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center-align items horizontally */
