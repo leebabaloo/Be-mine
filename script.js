@@ -1,4 +1,3 @@
-
 // Function to handle click outcomes
 function selectOption(option) {
     // Check which option was clicked
@@ -67,6 +66,7 @@ function displayYay() {
     
     yayVideo.src = 'yay.mp4';
     yayVideo.autoplay = true;
+    yayVideo.loop = true;
     yayVideo.muted = true;
     yayVideo.playsInline = true;
     yayVideo.load();
@@ -75,12 +75,9 @@ function displayYay() {
      imageContainer.appendChild(yayVideo);
         // Hide the options container
     document.getElementById('options').style.display = 'none';
-    setTimeout(function() {
-        yayVideo.pause();
-        yayVideo.currentTime = 0; // Reset to start
-        startMiniGame(); // Start the mini-game after stopping the video
-    }, 4000);
-
+    yayVideo.onended = function() {
+    startMiniGame();
+};
     
 }
 function startMiniGame() {
@@ -88,18 +85,18 @@ function startMiniGame() {
     container.innerHTML = ''; // Clear previous content
 
     let score = 0;
-    let timeLeft = 10; //  timer
+    let timeLeft = 10; // 10 seconds timer
 
-    //  score display
+    // Create score display
     const scoreDisplay = document.createElement('div');
-    scoreDisplay.innerText = `Score: ${score}`;
+    scoreDisplay.innerText = Score: ${score};
     scoreDisplay.style.fontSize = '24px';
     scoreDisplay.style.marginBottom = '10px';
     container.appendChild(scoreDisplay);
 
-    //  moving button
+    // Create the moving button
     const catchButton = document.createElement('button');
-    catchButton.innerText = 'Catch Me, Cutie!😼';
+    catchButton.innerText = 'Catch Me, Bitch!😼';
     catchButton.style.position = 'absolute';
     catchButton.style.padding = '10px 20px';
     catchButton.style.backgroundColor = '#ff66b2';
@@ -109,7 +106,7 @@ function startMiniGame() {
     catchButton.style.cursor = 'pointer';
     container.appendChild(catchButton);
 
-    // Move button 
+    // Move button to random position
     function moveButton() {
         const maxX = window.innerWidth - catchButton.offsetWidth;
         const maxY = window.innerHeight - catchButton.offsetHeight;
@@ -117,21 +114,21 @@ function startMiniGame() {
         const randomX = Math.floor(Math.random() * maxX);
         const randomY = Math.floor(Math.random() * maxY);
 
-        catchButton.style.left = `${randomX}px`;
-        catchButton.style.top = `${randomY}px`;
+        catchButton.style.left = ${randomX}px;
+        catchButton.style.top = ${randomY}px;
     }
 
-    // Button click e
+    // Button click event
     catchButton.onclick = function() {
         score++;
-        scoreDisplay.innerText = `Score: ${score}`;
+        scoreDisplay.innerText = Score: ${score};
         moveButton(); // Move immediately after clicking
     };
 
     // Start moving the button every second
     const moveInterval = setInterval(moveButton, 1000);
 
-    // Countdown
+    // Countdown timer
     const countdown = setInterval(function() {
         timeLeft--;
         if (timeLeft <= 0) {
@@ -140,26 +137,20 @@ function startMiniGame() {
             endMiniGame(score);
         }
     }, 1000);
-    
-
-   
-
 }
 function endMiniGame(score) {
-    
     const container = document.getElementById('image-container');
     container.innerHTML = ''; // Clear mini-game
 
     const result = document.createElement('h2');
-    result.innerText = `You're Done! Your score: ${score} tsk tsk `;
+    result.innerText = You're Done! Your score: ${score} tsk tsk ;
     result.style.fontSize = '28px';
     result.style.color = '#4caf50';
     container.appendChild(result);
-    
 
     // Play Again Button
     const playAgain = document.createElement('button');
-    playAgain.innerText = 'I still Think You're Awesome Sauce! Try Again?';
+    playAgain.innerText = 'Do You Wanna See How Ass You Are Again?';
     playAgain.style.padding = '10px 20px';
     playAgain.style.backgroundColor = '#007bff';
     playAgain.style.color = 'white';
