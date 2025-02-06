@@ -159,6 +159,7 @@ function startMiniGame() {
 
 }
 function endMiniGame(score) {
+    clearInterval(heartInterval);
     const container = document.getElementById('image-container');
     container.innerHTML = ''; // Clear mini-game
 
@@ -167,6 +168,7 @@ function endMiniGame(score) {
     result.style.fontSize = '28px';
     result.style.color = '#4caf50';
     container.appendChild(result);
+    
 
     // Play Again Button
     const playAgain = document.createElement('button');
