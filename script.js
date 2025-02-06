@@ -75,9 +75,12 @@ function displayYay() {
      imageContainer.appendChild(yayVideo);
         // Hide the options container
     document.getElementById('options').style.display = 'none';
-    yayVideo.onended = function() {
-    startMiniGame();
-};
+    setTimeout(function() {
+        yayVideo.pause();
+        yayVideo.currentTime = 0; // Reset to start
+        startMiniGame(); // Start the mini-game after stopping the video
+    }, 4000);
+
     
 }
 function startMiniGame() {
