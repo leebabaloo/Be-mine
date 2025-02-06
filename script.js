@@ -17,7 +17,7 @@ function selectOption(option) {
         yesButton.style.fontSize = newSize + 'px';
     } else {
         // If neither "Yes" nor "No" was clicked, show an alert message
-        alert('Invalid option!');
+        alert('Pick an Option, Bitch!');
     }
 }
 
@@ -35,17 +35,17 @@ function flashRainbowColors(callback) {
         if (callback) {
             callback();
         }
-    }, 2000); // Flash colors for 2 seconds
+    }, 200000); 
 }
 
 // Function to display the pop.image initially
-function displayCat() {
+function displayPop() {
     // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
     // Create a new Image element for the cat
     var popImage = new Image();
     // Set the source (file path) for the cat image
-    popImage.src = 'pop'; 
+    popImage.src = 'pop.png'; 
     // Set alternative text for the image (for accessibility)
     popImage.alt = 'Question';
     // When the cat image is fully loaded, add it to the image container
