@@ -120,7 +120,7 @@ function startMiniGame() {
     // Button click event
     catchButton.onclick = function() {
         score++;
-        scoreDisplay.innerText = Score: ${score};
+        scoreDisplay.innerText = `Score: ${score}`;
         moveButton(); // Move immediately after clicking
     };
 
@@ -164,10 +164,6 @@ function endMiniGame(score) {
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    try {
-        displayPop();
-    } catch (error) {
-        console.error("Error occurred:", error);
-    }
+document.addEventListener('DOMContentLoaded', function () {
+    displayPop();
 });
