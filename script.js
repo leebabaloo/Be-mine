@@ -61,9 +61,13 @@ function displayYay() {
     yayVideo.playsInline = true;
     imageContainer.appendChild(yayVideo);
     document.getElementById('options').style.display = 'none';
-    yayVideo.onended = function() {
-        startMiniGame();
-    };
+    yayVideo.onplay = function() {
+    setTimeout(function() {
+        yayVideo.pause();
+        yayVideo.currentTime = 0; // Optional: rewind to the start
+        startMiniGame(); // Proceed to the mini-game after stopping
+    }, 4000); // 4000 ms = 4 seconds
+};
 }
 
 function startMiniGame() {
