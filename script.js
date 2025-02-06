@@ -64,7 +64,7 @@ function displayYay() {
     yayVideo.onplay = function() {
     setTimeout(function() {
         startMiniGame(); 
-    }, 3000); 
+    }, 2000); 
 };
 }
 
