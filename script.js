@@ -63,7 +63,6 @@ function displayYay() {
     document.getElementById('options').style.display = 'none';
     yayVideo.onplay = function() {
     setTimeout(function() {
-        yayVideo.currentTime = 0; 
         startMiniGame(); 
     }, 3000); 
 };
