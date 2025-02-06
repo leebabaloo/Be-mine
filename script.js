@@ -1,13 +1,13 @@
 // Function to handle button click events
 function selectOption(option) {
     // Check which option was clicked
-    if (option === 'YESSSSSS<33333') {
+    if (option === 'yes') {
         // Flash rainbow colors
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
             displayCatHeart(); // Display the cat-heart.gif
         });
-    } else if (option === 'naurrrr:(') {
+    } else if (option === 'no') {
         // Change text on the "No" button to "Think again?"
         document.getElementById('no-button').innerText = 'Think again?'; 
         // Increase font size of "Yes" button
