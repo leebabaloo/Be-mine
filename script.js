@@ -1,10 +1,10 @@
-// Function to handle button click events
+// Function to handle click outcomes
 function selectOption(option) {
     // Check which option was clicked
     if (option === 'YESSSSS<3333') {
         // Flash rainbow colors
         flashRainbowColors(function() {
-            document.getElementById('question').style.display = 'none'; // Hide the question
+            document.getElementById('question').style.display = 'none'; // Hide  question
             displayYay(); // Display the yay gif
         });
     } else if (option === 'NAURRRRRR:(((') {
@@ -16,12 +16,12 @@ function selectOption(option) {
         var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
         yesButton.style.fontSize = newSize + 'px';
     } else {
-        // If neither "Yes" nor "No" was clicked, show an alert message
+        //  alert message
         alert('PICK, BITCH!');
     }
 }
 
-// Function to flash rainbow colors and then execute a callback function
+// Function to flash rainbow colors 
 function flashRainbowColors(callback) {
     var colors = ['#f8ddd6', '#e89bba', '#bff0d6', '#dadef5', '#cdf1f0', '#bae89b'];
     var i = 0;
@@ -40,15 +40,15 @@ function flashRainbowColors(callback) {
 
 // Function to display the pop.image initially
 function displayPop() {
-    // Get the container where the image will be displayed
+    
     var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the img
+
     var popImage = new Image();
-    // Set the source (file path) for the  image
+    
     popImage.src = 'pop.png'; 
-    // Set alternative text for the image (for accessibility)
+    // Set alternative text 
     popImage.alt = 'Pop';
-    // When the cat image is fully loaded, add it to the image container
+    //  add it to the image container
     popImage.onload = function() {
         imageContainer.appendChild(popImage);
     };
@@ -58,15 +58,15 @@ function displayPop() {
 function displayYay() {
     // Clear existing content in the image container
     document.getElementById('image-container').innerHTML = '';
-    // Get the container where the image will be displayed
+   
     var imageContainer = document.getElementById('image-container');
-    // Create a new Image element for the image
+    
     var yayImage = new Image();
-    // Set the source (file path) for the  image
+    
     yayImage.src = 'yay.mp4'; 
-    // Set alternative text for the image (for accessibility)
+    // Set alternative text 
     yayImage.alt = 'Yippee';
-    // When the cat-heart image is fully loaded, add it to the image container
+    //  add it to the image container
     yayImage.onload = function() {
         imageContainer.appendChild(yayImage);
         // Hide the options container
