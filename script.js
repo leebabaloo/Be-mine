@@ -66,7 +66,6 @@ function displayYay() {
     
     yayVideo.src = 'yay.mp4';
     yayVideo.autoplay = true;
-    yayVideo.loop = true;
     yayVideo.muted = true;
     yayVideo.playsInline = true;
     yayVideo.load();
