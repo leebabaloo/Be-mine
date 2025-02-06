@@ -5,7 +5,7 @@ function selectOption(option) {
         // Flash rainbow colors
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide the question
-            displayCatHeart(); // Display the cat-heart.gif
+            displayYay(); // Display the cat-heart.gif
         });
     } else if (option === 'NAURRRRRR:(((') {
         // Change text on the "No" button to "You sure?"
@@ -55,24 +55,24 @@ function displayPop() {
 }
 
 // Function to display the cat-heart.gif
-function displayCatHeart() {
+function displayYay() {
     // Clear existing content in the image container
     document.getElementById('image-container').innerHTML = '';
     // Get the container where the image will be displayed
     var imageContainer = document.getElementById('image-container');
     // Create a new Image element for the cat-heart
-    var catHeartImage = new Image();
+    var yayImage = new Image();
     // Set the source (file path) for the cat-heart image
-    catHeartImage.src = 'cat-heart.gif'; // Assuming the cat-heart image is named "cat-heart.gif"
+    yayImage.src = 'yay.mp4'; 
     // Set alternative text for the image (for accessibility)
-    catHeartImage.alt = 'Cat Heart';
+    yayImage.alt = 'Yippee';
     // When the cat-heart image is fully loaded, add it to the image container
-    catHeartImage.onload = function() {
-        imageContainer.appendChild(catHeartImage);
+    yayImage.onload = function() {
+        imageContainer.appendChild(yayImage);
         // Hide the options container
         document.getElementById('options').style.display = 'none';
     };
 }
 
-// Display the cat.gif initially
+// Display the pop initially
 displayPop();
