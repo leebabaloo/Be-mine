@@ -47,7 +47,7 @@ function displayPop() {
     // Set the source (file path) for the cat image
     popImage.src = 'pop.png'; 
     // Set alternative text for the image (for accessibility)
-    popImage.alt = 'Question';
+    popImage.alt = 'Pop';
     // When the cat image is fully loaded, add it to the image container
     popImage.onload = function() {
         imageContainer.appendChild(popImage);
@@ -75,4 +75,4 @@ function displayCatHeart() {
 }
 
 // Display the cat.gif initially
-displayCat();
+displayPop();
