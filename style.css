@@ -24,7 +24,7 @@ button {
     margin: 0 10px; /* Set margin around buttons */
     font-size: 26px; /* Set font size for buttons */
     font-family: 'Tangerine', serif; /* Apply Sacramento font to the options */
-    background-color: #ffe4e1; /* Set button background color */
+    background-color: #e6e6fa; /* Set button background color */
     color: white; /* Set text color to white */
     border: none; /* Remove button border */
     cursor: pointer; /* Set cursor to pointer on hover */
