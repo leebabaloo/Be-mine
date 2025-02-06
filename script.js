@@ -88,18 +88,18 @@ function startMiniGame() {
     container.innerHTML = ''; // Clear previous content
 
     let score = 0;
-    let timeLeft = 10; // 10 seconds timer
+    let timeLeft = 10; //  timer
 
-    // Create score display
+    //  score display
     const scoreDisplay = document.createElement('div');
     scoreDisplay.innerText = `Score: ${score}`;
     scoreDisplay.style.fontSize = '24px';
     scoreDisplay.style.marginBottom = '10px';
     container.appendChild(scoreDisplay);
 
-    // Create the moving button
+    //  moving button
     const catchButton = document.createElement('button');
-    catchButton.innerText = 'Catch Me, Bitch!😼';
+    catchButton.innerText = 'Catch Me, Cutie!😼';
     catchButton.style.position = 'absolute';
     catchButton.style.padding = '10px 20px';
     catchButton.style.backgroundColor = '#ff66b2';
@@ -109,7 +109,7 @@ function startMiniGame() {
     catchButton.style.cursor = 'pointer';
     container.appendChild(catchButton);
 
-    // Move button to random position
+    // Move button 
     function moveButton() {
         const maxX = window.innerWidth - catchButton.offsetWidth;
         const maxY = window.innerHeight - catchButton.offsetHeight;
@@ -121,7 +121,7 @@ function startMiniGame() {
         catchButton.style.top = `${randomY}px`;
     }
 
-    // Button click event
+    // Button click e
     catchButton.onclick = function() {
         score++;
         scoreDisplay.innerText = `Score: ${score}`;
@@ -131,7 +131,7 @@ function startMiniGame() {
     // Start moving the button every second
     const moveInterval = setInterval(moveButton, 1000);
 
-    // Countdown timer
+    // Countdown
     const countdown = setInterval(function() {
         timeLeft--;
         if (timeLeft <= 0) {
@@ -140,6 +140,23 @@ function startMiniGame() {
             endMiniGame(score);
         }
     }, 1000);
+    function createHeart() {
+        const heart = document.createElement('div');
+        heart.classList.add('heart');
+        heart.style.left = `${Math.random() * 100}%`;
+        heart.style.bottom = '0px';
+
+        container.appendChild(heart);
+
+        // Remove the heart after animation
+        setTimeout(() => {
+            heart.remove();
+        }, 5000);
+    }
+
+    // Generate hearts every 500ms
+    const heartInterval = setInterval(createHeart, 500);
+
 }
 function endMiniGame(score) {
     const container = document.getElementById('image-container');
@@ -153,7 +170,7 @@ function endMiniGame(score) {
 
     // Play Again Button
     const playAgain = document.createElement('button');
-    playAgain.innerText = 'Do You Wanna See How Ass You Are Again?';
+    playAgain.innerText = 'I still Think You're Awesome Sauce! Try Again?';
     playAgain.style.padding = '10px 20px';
     playAgain.style.backgroundColor = '#007bff';
     playAgain.style.color = 'white';
