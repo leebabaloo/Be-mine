@@ -67,7 +67,6 @@ function displayYay() {
     
     yayVideo.src = 'yay.mp4';
     yayVideo.autoplay = true;
-    yayVideo.loop = true;
     yayVideo.muted = true;
     yayVideo.playsInline = true;
     yayVideo.load();
@@ -163,12 +162,7 @@ function endMiniGame(score) {
     };
     container.appendChild(playAgain);
 }
-button {
-    transition: transform 0.2s ease-in-out;
-}
-button:hover {
-    transform: scale(1.1);
-}
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
