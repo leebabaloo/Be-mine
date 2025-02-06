@@ -35,7 +35,7 @@ function flashRainbowColors(callback) {
         if (callback) {
             callback();
         }
-    }, 200000); 
+    }, 2000); 
 }
 
 // Function to display the pop.image initially
