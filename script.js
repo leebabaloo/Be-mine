@@ -12,8 +12,8 @@ function selectOption(option) {
         document.getElementById('no-button').innerText = 'Nahuh!'; 
         // Increase font size of "Yes" button
         var yesButton = document.getElementById('yes-button');
-        var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
-        var newSize = parseFloat(currentFontSize) * 2; // Increase font size by  * 2px
+        var maxFontSize = 72;
+        var newSize = Math.min(parseFloat(currentFontSize)*2, maxFontSize);
         yesButton.style.fontSize = newSize + 'px';
     } else {
         //  alert message
@@ -61,14 +61,18 @@ function displayYay() {
    
     var imageContainer = document.getElementById('image-container');
     
-    var yayImage = new Image();
+    var yayVideo = document.createElement('video');
     
-    yayImage.src = 'yay.mp4'; 
+    yayVideo.src = 'yay.mp4'; 
     // Set alternative text 
-    yayImage.alt = 'Yippee';
+    yayVideo.alt = 'Yippee';
+    yayVideo.autoplay= true;
+    yayVideo.loop= true;
+    yayVideo.muted= true;
+    yayVideo.playsInline = true;
     //  add it to the image container
-    yayImage.onload = function() {
-        imageContainer.appendChild(yayImage);
+    yayVideo.onload = function() {
+        imageContainer.appendChild(yayVideo);
         // Hide the options container
         document.getElementById('options').style.display = 'none';
     };
