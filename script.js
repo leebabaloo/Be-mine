@@ -65,7 +65,7 @@ function displayYay() {
     setTimeout(function() {
         yayVideo.currentTime = 0; 
         startMiniGame(); 
-    }, 4000); 
+    }, 3000); 
 };
 }
 
@@ -130,14 +130,14 @@ function endMiniGame(score) {
     const result = document.createElement('h2');
     result.innerText = `You're Done! Your score: ${score} tsk tsk`;
     result.style.fontSize = '28px';
-    result.style.color = '#4caf50';
+    result.style.color = '#6f2ea8';
     container.appendChild(result);
 
     const playAgain = document.createElement('button');
     playAgain.innerText = "Don't Worry I Still Think You're Awesome Sauce! Try Again?";
     playAgain.style.padding = '10px 20px';
-    playAgain.style.backgroundColor = '#007bff';
-    playAgain.style.color = 'white';
+    playAgain.style.backgroundColor = '#c2f2d0';
+    playAgain.style.color = 'black';
     playAgain.style.border = 'none';
     playAgain.style.borderRadius = '10px';
     playAgain.style.cursor = 'pointer';
