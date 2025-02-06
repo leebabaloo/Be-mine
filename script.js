@@ -140,22 +140,9 @@ function startMiniGame() {
             endMiniGame(score);
         }
     }, 1000);
-    function createHeart() {
-        const heart = document.createElement('div');
-        heart.classList.add('heart');
-        heart.style.left = `${Math.random() * 100}%`;
-        heart.style.bottom = '0px';
+    
 
-        container.appendChild(heart);
-
-        // Remove the heart after animation
-        setTimeout(() => {
-            heart.remove();
-        }, 5000);
-    }
-
-    // Generate hearts every 500ms
-    const heartInterval = setInterval(createHeart, 500);
+   
 
 }
 function endMiniGame(score) {
