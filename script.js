@@ -173,6 +173,9 @@ function endMiniGame(score) {
 
     openLetter.onclick = function () {
         letter.style.display = letter.style.display === 'none' ? 'block' : 'none'; // Toggle visibility
+        setTimeout(function() {
+    window.location.href = 'newpage.html'; // Redirects to a new page after 5 seconds
+}, 5000);
     };
 
     // Add everything to the container
