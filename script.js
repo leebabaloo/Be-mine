@@ -150,11 +150,95 @@ function endMiniGame(score) {
     playAgain.onclick = function() {
         startMiniGame();
     };
+    const openLetter = document.createElement('button');
+    openLetter.innerText = "I Want To Tell You Something! 🧸";
+    openLetter.style.padding = '10px 20px';
+    openLetter.style.backgroundColor = '#fdf5c9';
+    openLetter.style.color = 'black';
+    openLetter.style.border = 'none';
+    openLetter.style.borderRadius = '10px';
+    openLetter.style.cursor = 'pointer';
+
+    
+    const letter = document.createElement('div');
+    letter.innerText = "YOU ARE THE MOST AWESOMEST, COOLEST, PRETTIEST, SMARTEST PERSON EVER AND I LOOOOOOOOOVE YOU FOR THAT. KEEP BEING YOU ALWAYS, MY POOKIE WOOKIE SCHMOOKIE";
+    letter.innerText = "HERE ARE SOME FLOWERS FOR YOU!!!";
+    letter.style.display = 'none'; 
+    letter.style.backgroundColor = '#fff5f8';
+    letter.style.padding = '15px';
+    letter.style.border = '2px solid #ba005d';
+    letter.style.borderRadius = '10px';
+    letter.style.maxWidth = '300px';
+    letter.style.textAlign = 'center';
+    letter.style.fontStyle = 'italic';
+
+    openLetter.onclick = function () {
+        letter.style.display = letter.style.display === 'none' ? 'block' : 'none'; 
+    };
+    setTimeout(startEmojiRain, 5000);
+        } else {
+            letter.style.display = 'none';
+        }
+    };
+
+    // Add everything to the container
+    resultContainer.appendChild(result);
+    resultContainer.appendChild(playAgain);
+    resultContainer.appendChild(openLetter);
+    resultContainer.appendChild(letter); // Hidden letter
+
+    container.appendChild(resultContainer);
+}
     resultContainer.appendChild(result);
     resultContainer.appendChild(playAgain);
 
     container.appendChild(resultContainer);
 }
+function startEmojiRain() {
+    const emojis = ['💐', '🌷', '🌹', '🪻', '🌺', '🌸', '🌼']; 
+    const emojiContainer = document.createElement('div');
+    emojiContainer.style.position = 'fixed';
+    emojiContainer.style.top = '0';
+    emojiContainer.style.left = '0';
+    emojiContainer.style.width = '100%';
+    emojiContainer.style.height = '100%';
+    emojiContainer.style.pointerEvents = 'none'; 
+    document.body.appendChild(emojiContainer);
+
+function createFallingEmoji() {
+        const emoji = document.createElement('div');
+        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+        emoji.style.position = 'absolute';
+        emoji.style.left = Math.random() * 100 + 'vw'; 
+        emoji.style.fontSize = Math.random() * 24 + 24 + 'px'; 
+        emoji.style.animation = 'fall 4s linear infinite';
+
+        emojiContainer.appendChild(emoji);
+
+        // Remove emoji 
+        setTimeout(() => {
+            emoji.remove();
+        }, 4000);
+    }
+
+    // Create new emojis
+    const emojiInterval = setInterval(createFallingEmoji, 200);
+
+    // Stop the emojis
+    setTimeout(() => {
+        clearInterval(emojiInterval);
+    }, 10000);
+}
+
+//animation
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes fall {
+    0% { transform: translateY(-50px); opacity: 1; }
+    100% { transform: translateY(100vh); opacity: 0; }
+}
+`;
+document.head.appendChild(style);
 
 document.addEventListener('DOMContentLoaded', function() {
     try {
