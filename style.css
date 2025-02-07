@@ -57,46 +57,50 @@ button:hover {
     left: 0;
     width: 100%;
     height: 100%;
-    pointer-events: none; /* Let clicks pass through */
+    pointer-events: none; /* So hearts don't interfere with button clicks */
     overflow: hidden;
-    z-index: -1; /* Behind all content */
+    z-index: -1; /* Keeps hearts in the background */
 }
 
 .heart {
     position: absolute;
+    background-color: pink;
     width: 20px;
     height: 20px;
-    background-color: red;
-    transform: rotate(45deg);
-    animation: float 5s linear infinite;
-    opacity: 0.8;
+    transform: rotate(45deg); /* Make the square look like a heart */
+    animation: floatUp linear infinite;
 }
 
+/* Create the heart shape with pseudo-elements */
 .heart::before,
 .heart::after {
     content: '';
     position: absolute;
+    background-color: pink;
     width: 20px;
     height: 20px;
-    background-color: red;
     border-radius: 50%;
+}
+
+.heart::before {
     top: -10px;
     left: 0;
 }
 
 .heart::after {
-    left: 10px;
     top: 0;
+    left: -10px;
 }
 
-@keyframes float {
+/* Float animation - moving upwards */
+@keyframes floatUp {
     from {
-        transform: translateY(100vh) rotate(45deg);
+        transform: translateY(100vh) rotate(45deg); /* Start from the bottom */
         opacity: 1;
     }
     to {
-        transform: translateY(-10vh) rotate(45deg);
-        opacity: 0;
+        transform: translateY(-20vh) rotate(45deg); /* Move to the top */
+        opacity: 0; /* Fade out as it reaches the top */
     }
 }
 
