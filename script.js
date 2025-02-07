@@ -202,43 +202,38 @@ function startEmojiRain() {
     emojiContainer.style.left = '0';
     emojiContainer.style.width = '100%';
     emojiContainer.style.height = '100%';
-    emojiContainer.style.pointerEvents = 'none'; 
+    emojiContainer.style.pointerEvents = 'none';
     document.body.appendChild(emojiContainer);
 
-function createFallingEmoji() {
+    let emojiCount = 0; // Limit the total number of emojis
+
+    function createFallingEmoji() {
+        if (emojiCount >= 50) return;
+
         const emoji = document.createElement('div');
         emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-        emoji.style.position = 'absolute';
-        emoji.style.left = Math.random() * 100 + 'vw'; 
-        emoji.style.fontSize = Math.random() * 24 + 24 + 'px'; 
-        emoji.style.animation = 'fall 4s linear infinite';
+        emoji.classList.add('emoji'); // Use CSS class for animation
+        emoji.style.left = Math.random() * 100 + 'vw';
+        emoji.style.fontSize = Math.random() * 24 + 24 + 'px';
 
         emojiContainer.appendChild(emoji);
+        emojiCount++;
 
-        // Remove emoji 
+        // Clean up after animation ends
         setTimeout(() => {
             emoji.remove();
         }, 4000);
     }
 
-    // Create new emojis
-    const emojiInterval = setInterval(createFallingEmoji, 200);
+    // Generate emojis every 300ms
+    const emojiInterval = setInterval(createFallingEmoji, 300);
 
-    // Stop the emojis
+    // Stop creating new emojis after 15 seconds
     setTimeout(() => {
         clearInterval(emojiInterval);
-    }, 10000);
+    }, 15000);
 }
 
-//animation
-const style = document.createElement('style');
-style.innerHTML = `
-@keyframes fall {
-    0% { transform: translateY(-50px); opacity: 1; }
-    100% { transform: translateY(100vh); opacity: 0; }
-}
-`;
-document.head.appendChild(style);
 
 document.addEventListener('DOMContentLoaded', function() {
     try {
