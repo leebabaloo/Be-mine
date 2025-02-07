@@ -175,11 +175,7 @@ function endMiniGame(score) {
     openLetter.onclick = function () {
         letter.style.display = letter.style.display === 'none' ? 'block' : 'none'; 
     };
-    setTimeout(startEmojiRain, 5000);
-        } else {
-            letter.style.display = 'none';
-        }
-    };
+    
 
     // Add everything to the container
     resultContainer.appendChild(result);
@@ -193,45 +189,6 @@ function endMiniGame(score) {
     resultContainer.appendChild(playAgain);
 
     container.appendChild(resultContainer);
-}
-function startEmojiRain() {
-    const emojis = ['💐', '🌷', '🌹', '🪻', '🌺', '🌸', '🌼']; 
-    const emojiContainer = document.createElement('div');
-    emojiContainer.style.position = 'fixed';
-    emojiContainer.style.top = '0';
-    emojiContainer.style.left = '0';
-    emojiContainer.style.width = '100%';
-    emojiContainer.style.height = '100%';
-    emojiContainer.style.pointerEvents = 'none';
-    document.body.appendChild(emojiContainer);
-
-    let emojiCount = 0; // Limit the total number of emojis
-
-    function createFallingEmoji() {
-        if (emojiCount >= 50) return;
-
-        const emoji = document.createElement('div');
-        emoji.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-        emoji.classList.add('emoji'); // Use CSS class for animation
-        emoji.style.left = Math.random() * 100 + 'vw';
-        emoji.style.fontSize = Math.random() * 24 + 24 + 'px';
-
-        emojiContainer.appendChild(emoji);
-        emojiCount++;
-
-        // Clean up after animation ends
-        setTimeout(() => {
-            emoji.remove();
-        }, 4000);
-    }
-
-    // Generate emojis every 300ms
-    const emojiInterval = setInterval(createFallingEmoji, 300);
-
-    // Stop creating new emojis after 15 seconds
-    setTimeout(() => {
-        clearInterval(emojiInterval);
-    }, 15000);
 }
 
 
