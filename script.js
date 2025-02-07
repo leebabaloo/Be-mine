@@ -2,7 +2,7 @@
 function selectOption(option) {
     // Check which option was clicked
     if (option === 'YESSSSS<3333') {
-        // Flash rainbow colors
+        clearInterval(heartInterval);
         flashRainbowColors(function() {
             document.getElementById('question').style.display = 'none'; // Hide question
             displayYay(); // Display the yay gif
@@ -126,6 +126,12 @@ function endMiniGame(score) {
     const container = document.getElementById('image-container');
     container.innerHTML = '';
 
+    const resultContainer = document.createElement('div');
+    resultContainer.style.display = 'flex';
+    resultContainer.style.flexDirection = 'column';  
+    resultContainer.style.alignItems = 'center';     
+    resultContainer.style.gap = '10px';
+    
     const result = document.createElement('h2');
     result.innerText = `You're Done! Your score: ${score} tsk tsk`;
     result.style.fontSize = '28px';
@@ -143,6 +149,9 @@ function endMiniGame(score) {
     playAgain.onclick = function() {
         location.reload();
     };
+    resultContainer.appendChild(result);
+    resultContainer.appendChild(playAgain);
+
     container.appendChild(playAgain);
 }
 
@@ -157,24 +166,26 @@ const heartsContainer = document.createElement('div');
 heartsContainer.classList.add('hearts-container');
 document.body.appendChild(heartsContainer);
 
+let heartInterval = setInterval(createHeart, 300);
+
 function createHeart() {
     const heart = document.createElement('div');
     heart.classList.add('heart');
 
-    const size = Math.random() * 20 + 10; // Random size between 10-30px
+    const size = Math.random() * 20 + 10; 
     heart.style.width = `${size}px`;
     heart.style.height = `${size}px`;
 
-    heart.style.left = `${Math.random() * 100}vw`; // Random horizontal position
-    heart.style.animationDuration = `${Math.random() * 3 + 3}s`; // 3–6 seconds duration
+    heart.style.left = `${Math.random() * 100}vw`; 
+    heart.style.animationDuration = `${Math.random() * 3 + 3}s`; 
+    heart.style.animationDelay = `${Math.random()}s`;
 
     heartsContainer.appendChild(heart);
 
-    // Remove heart after animation ends to clean up DOM
+    // DOM cleanup
     setTimeout(() => {
         heart.remove();
     }, 6000);
 }
 
-// Create a new heart every 300ms
-setInterval(createHeart, 300);
+
