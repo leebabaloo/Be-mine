@@ -91,6 +91,17 @@ button:hover {
     top: 0;
     left: -10px;
 }
+/* Float animation - moving upwards */
+@keyframes floatUp {
+    from {
+        transform: translateY(100vh) rotate(45deg); /* Start from the bottom */
+        opacity: 1;
+    }
+    to {
+        transform: translateY(-20vh) rotate(45deg); /* Move to the top */
+        opacity: 0; /* Fade out as it reaches the top */
+    }
+}
 
 
 
