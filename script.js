@@ -136,7 +136,8 @@ function endMiniGame(score) {
     result.innerText = `You're Done! Your score: ${score} tsk tsk`;
     result.style.fontSize = '28px';
     result.style.color = '#6f2ea8';
-    container.appendChild(result);
+    result.style.margin = '0';
+    
 
     const playAgain = document.createElement('button');
     playAgain.innerText = "Don't Worry I Still Think You're Awesome Sauce! Try Again?";
@@ -147,12 +148,12 @@ function endMiniGame(score) {
     playAgain.style.borderRadius = '10px';
     playAgain.style.cursor = 'pointer';
     playAgain.onclick = function() {
-        location.reload();
+        startMiniGame();
     };
     resultContainer.appendChild(result);
     resultContainer.appendChild(playAgain);
 
-    container.appendChild(playAgain);
+    container.appendChild(resultContainer);
 }
 
 document.addEventListener('DOMContentLoaded', function() {
