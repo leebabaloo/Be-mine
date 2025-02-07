@@ -153,3 +153,28 @@ document.addEventListener('DOMContentLoaded', function() {
         console.error('Error occurred:', error);
     }
 });
+const heartsContainer = document.createElement('div');
+heartsContainer.classList.add('hearts-container');
+document.body.appendChild(heartsContainer);
+
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+
+    const size = Math.random() * 20 + 10; // Random size between 10-30px
+    heart.style.width = `${size}px`;
+    heart.style.height = `${size}px`;
+
+    heart.style.left = `${Math.random() * 100}vw`; // Random horizontal position
+    heart.style.animationDuration = `${Math.random() * 3 + 3}s`; // 3–6 seconds duration
+
+    heartsContainer.appendChild(heart);
+
+    // Remove heart after animation ends to clean up DOM
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}
+
+// Create a new heart every 300ms
+setInterval(createHeart, 300);
