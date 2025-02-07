@@ -150,47 +150,11 @@ function endMiniGame(score) {
     playAgain.onclick = function() {
         startMiniGame();
     };
-    const openLetter = document.createElement('button');
-    openLetter.innerText = "I Want To Tell You Something! 🧸";
-    openLetter.style.padding = '10px 20px';
-    openLetter.style.backgroundColor = '#fdf5c9';
-    openLetter.style.color = 'black';
-    openLetter.style.border = 'none';
-    openLetter.style.borderRadius = '10px';
-    openLetter.style.cursor = 'pointer';
-
-    
-    const letter = document.createElement('div');
-    letter.innerText = "YOU ARE THE MOST AWESOMEST, COOLEST, PRETTIEST, SMARTEST PERSON EVER AND I LOOOOOOOOOVE YOU FOR THAT. KEEP BEING YOU ALWAYS, MY POOKIE WOOKIE SCHMOOKIE";
-    letter.innerText = "HERE ARE SOME FLOWERS FOR YOU!!!";
-    letter.style.display = 'none'; 
-    letter.style.backgroundColor = '#fff5f8';
-    letter.style.padding = '15px';
-    letter.style.border = '2px solid #ba005d';
-    letter.style.borderRadius = '10px';
-    letter.style.maxWidth = '300px';
-    letter.style.textAlign = 'center';
-    letter.style.fontStyle = 'italic';
-
-    openLetter.onclick = function () {
-        letter.style.display = letter.style.display === 'none' ? 'block' : 'none'; 
-    };
-    
-
-    // Add everything to the container
-    resultContainer.appendChild(result);
-    resultContainer.appendChild(playAgain);
-    resultContainer.appendChild(openLetter);
-    resultContainer.appendChild(letter); // Hidden letter
-
-    container.appendChild(resultContainer);
-}
     resultContainer.appendChild(result);
     resultContainer.appendChild(playAgain);
 
     container.appendChild(resultContainer);
 }
-
 
 document.addEventListener('DOMContentLoaded', function() {
     try {
@@ -224,5 +188,3 @@ function createHeart() {
         heart.remove();
     }, 6000);
 }
-
-
