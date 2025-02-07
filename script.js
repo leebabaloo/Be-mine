@@ -4,13 +4,13 @@ function selectOption(option) {
     if (option === 'YESSSSS<3333') {
         clearInterval(heartInterval);
         flashRainbowColors(function() {
-            document.getElementById('question').style.display = 'none'; // Hide question
+            document.getElementById('question').style.display = 'none'; // remove the question
             displayYay(); // Display the yay gif
         });
     } else if (option === 'NAURRRRRR:(((') {
         // Change text on the "No" button to "Nahuh!"
         document.getElementById('no-button').innerText = 'Nahuh!'; 
-        // Increase font size of "Yes" button
+        // Increase font size of yes button
         var yesButton = document.getElementById('yes-button');
         var currentFontSize = window.getComputedStyle(yesButton).getPropertyValue('font-size');
         var newSize = parseFloat(currentFontSize) * 2;
@@ -21,7 +21,7 @@ function selectOption(option) {
     }
 }
 
-// Function to flash rainbow colors 
+// flash rainbow colors 
 function flashRainbowColors(callback) {
     var originalColor = document.body.style.backgroundColor;
     var colors = ['#f8ddd6', '#e89bba', '#bff0d6', '#dadef5', '#cdf1f0', '#bae89b'];
@@ -32,7 +32,7 @@ function flashRainbowColors(callback) {
     }, 400); // Change color every 400 milliseconds
     setTimeout(function() {
         clearInterval(interval);
-        document.body.style.backgroundColor = originalColor; // Reset background color
+        document.body.style.backgroundColor = originalColor; // Reset background 
         if (callback) {
             callback();
         }
@@ -159,7 +159,7 @@ function endMiniGame(score) {
     openLetter.style.borderRadius = '10px';
     openLetter.style.cursor = 'pointer';
 
-    // 📩 Letter display
+    // letter content and display
     const letter = document.createElement('div');
     letter.innerText = "YOU ARE THE MOST AMAZING, AWESOMEST, COOLEST, PRETTIEST, FUNNIEST PERSON EVER AND I LOOOOOOOVE YOU FOR THAT! NEVER CHANGE, MY POOKIE WOOKIE SCHMOOKIE<3";
     letter.style.display = 'none'; // Hidden by default
