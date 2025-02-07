@@ -150,8 +150,36 @@ function endMiniGame(score) {
     playAgain.onclick = function() {
         startMiniGame();
     };
+    const openLetter = document.createElement('button');
+    openLetter.innerText = "I Have Something For You! 🧸";
+    openLetter.style.padding = '10px 20px';
+    openLetter.style.backgroundColor = '#ffc0cb';
+    openLetter.style.color = 'black';
+    openLetter.style.border = 'none';
+    openLetter.style.borderRadius = '10px';
+    openLetter.style.cursor = 'pointer';
+
+    // 📩 Letter display
+    const letter = document.createElement('div');
+    letter.innerText = "YOU ARE THE MOST AMAZING, AWESOMEST, COOLEST, PRETTIEST, FUNNIEST PERSON EVER AND I LOOOOOOOVE YOU FOR THAT! NEVER CHANGE, MY POOKIE WOOKIE SCHMOOKIE<3";
+    letter.style.display = 'none'; // Hidden by default
+    letter.style.backgroundColor = '#fff5f8';
+    letter.style.padding = '15px';
+    letter.style.border = '2px solid ##ba005d';
+    letter.style.borderRadius = '10px';
+    letter.style.maxWidth = '300px';
+    letter.style.textAlign = 'center';
+    letter.style.fontStyle = 'italic';
+
+    openLetter.onclick = function () {
+        letter.style.display = letter.style.display === 'none' ? 'block' : 'none'; // Toggle visibility
+    };
+
+    // Add everything to the container
     resultContainer.appendChild(result);
     resultContainer.appendChild(playAgain);
+    resultContainer.appendChild(openLetter);
+    resultContainer.appendChild(letter); // Hidden letter
 
     container.appendChild(resultContainer);
 }
