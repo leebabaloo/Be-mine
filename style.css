@@ -92,34 +92,6 @@ button:hover {
     left: -10px;
 }
 
-/* Float animation - moving upwards */
-@keyframes floatUp {
-    from {
-        transform: translateY(100vh) rotate(45deg); /* Start from the bottom */
-        opacity: 1;
-    }
-    to {
-        transform: translateY(-20vh) rotate(45deg); /* Move to the top */
-        opacity: 0; /* Fade out as it reaches the top */
-    }
-}
-@keyframes fall {
-    0% {
-        transform: translateY(-50px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh);
-        opacity: 0;
-    }
-}
-
-/* Emoji Styling */
-.emoji {
-    position: absolute;
-    animation: fall 4s linear forwards;
-    pointer-events: none; /* Ensure emojis don't interfere with clicks */
-}
 
 
     
